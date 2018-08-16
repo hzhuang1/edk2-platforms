@@ -193,6 +193,14 @@
   #
   EmbeddedPkg/Drivers/VirtualKeyboardDxe/VirtualKeyboardDxe.inf
 
+  #
+  # MMC/SD
+  #
+  Platform/Hisilicon/HiKey960/HiKey960MmcDxe/HiKey960MmcDxe.inf
+  EmbeddedPkg/Universal/NonDiscoverableDeviceDxe/NonDiscoverableDeviceDxe.inf
+  EmbeddedPkg/Drivers/DwMmcHcDxe/DwMmcHcDxe.inf
+  MdeModulePkg/Bus/Sd/SdDxe/SdDxe.inf
+
   Platform/Hisilicon/HiKey960/HiKey960Dxe/HiKey960Dxe.inf
 
   #

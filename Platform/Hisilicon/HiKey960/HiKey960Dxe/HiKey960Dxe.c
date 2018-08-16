@@ -23,6 +23,7 @@
 #include <Library/DevicePathLib.h>
 #include <Library/IoLib.h>
 #include <Library/MemoryAllocationLib.h>
+#include <Library/NonDiscoverableDeviceRegistrationLib.h>
 #include <Library/PrintLib.h>
 #include <Library/SerialPortLib.h>
 #include <Library/TimerLib.h>
@@ -33,6 +34,7 @@
 #include <Protocol/DevicePathFromText.h>
 #include <Protocol/EmbeddedGpio.h>
 #include <Protocol/LoadedImage.h>
+#include <Protocol/NonDiscoverableDevice.h>
 #include <Protocol/PlatformBootManager.h>
 #include <Protocol/PlatformVirtualKeyboard.h>
 
@@ -443,6 +445,19 @@ HiKey960EntryPoint (
                   &gEfiEndOfDxeEventGroupGuid,
                   &EndOfDxeEvent
                   );
+  if (EFI_ERROR (Status)) {
+    return Status;
+  }
+
+  Status = RegisterNonDiscoverableMmioDevice (
+             NonDiscoverableDeviceTypeSdhci,
+             NonDiscoverableDeviceDmaTypeNonCoherent,
+             NULL,
+             NULL,
+             1,
+             0xFF37F000, // SD
+             SIZE_4KB
+             );
   if (EFI_ERROR (Status)) {
     return Status;
   }

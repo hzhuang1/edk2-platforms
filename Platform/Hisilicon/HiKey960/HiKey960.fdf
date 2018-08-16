@@ -128,6 +128,14 @@ READ_LOCK_STATUS   = TRUE
   #
   INF EmbeddedPkg/Drivers/VirtualKeyboardDxe/VirtualKeyboardDxe.inf
 
+  #
+  # MMC/SD
+  #
+  INF Platform/Hisilicon/HiKey960/HiKey960MmcDxe/HiKey960MmcDxe.inf
+  INF EmbeddedPkg/Universal/NonDiscoverableDeviceDxe/NonDiscoverableDeviceDxe.inf
+  INF EmbeddedPkg/Drivers/DwMmcHcDxe/DwMmcHcDxe.inf
+  INF MdeModulePkg/Bus/Sd/SdDxe/SdDxe.inf
+
   INF Platform/Hisilicon/HiKey960/HiKey960Dxe/HiKey960Dxe.inf
 
   #

@@ -33,6 +33,7 @@
   CacheMaintenanceLib
   DxeServicesTableLib
   IoLib
+  NonDiscoverableDeviceRegistrationLib
   PcdLib
   TimerLib
   UefiBootManagerLib
