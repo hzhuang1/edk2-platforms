@@ -32,6 +32,7 @@
   CacheMaintenanceLib
   DebugLib
   IoLib
+  NonDiscoverableDeviceRegistrationLib
   UefiBootManagerLib
   UefiLib
   UefiDriverEntryPoint

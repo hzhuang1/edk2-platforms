@@ -128,13 +128,16 @@ READ_LOCK_STATUS   = TRUE
   #
   INF EmbeddedPkg/Drivers/VirtualKeyboardDxe/VirtualKeyboardDxe.inf
 
-  INF Platform/Hisilicon/HiKey/HiKeyDxe/HiKeyDxe.inf
+  #
+  # MMC/SD
+  #
+  INF Platform/Hisilicon/HiKey/HiKeyMmcDxe/HiKeyMmcDxe.inf
+  INF EmbeddedPkg/Universal/NonDiscoverableDeviceDxe/NonDiscoverableDeviceDxe.inf
+  INF EmbeddedPkg/Drivers/DwMmcHcDxe/DwMmcHcDxe.inf
+  INF MdeModulePkg/Bus/Sd/EmmcDxe/EmmcDxe.inf
+  INF MdeModulePkg/Bus/Sd/SdDxe/SdDxe.inf
 
-  #
-  # Multimedia Card Interface
-  #
-  INF EmbeddedPkg/Universal/MmcDxe/MmcDxe.inf
-  INF EmbeddedPkg/Drivers/DwEmmcDxe/DwEmmcDxe.inf
+  INF Platform/Hisilicon/HiKey/HiKeyDxe/HiKeyDxe.inf
 
   #
   # USB Host Support

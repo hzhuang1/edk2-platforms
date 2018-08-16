@@ -126,12 +126,6 @@
   gEmbeddedTokenSpaceGuid.PcdMetronomeTickPeriod|1000
 
   #
-  # DW MMC/SD card controller
-  #
-  gEmbeddedTokenSpaceGuid.PcdDwEmmcDxeBaseAddress|0xF723D000
-  gEmbeddedTokenSpaceGuid.PcdDwEmmcDxeClockFrequencyInHz|100000000
-
-  #
   #
   # Fastboot
   #
@@ -204,13 +198,16 @@
   #
   EmbeddedPkg/Drivers/VirtualKeyboardDxe/VirtualKeyboardDxe.inf
 
-  Platform/Hisilicon/HiKey/HiKeyDxe/HiKeyDxe.inf
-
   #
   # MMC/SD
   #
-  EmbeddedPkg/Universal/MmcDxe/MmcDxe.inf
-  EmbeddedPkg/Drivers/DwEmmcDxe/DwEmmcDxe.inf
+  Platform/Hisilicon/HiKey/HiKeyMmcDxe/HiKeyMmcDxe.inf
+  EmbeddedPkg/Universal/NonDiscoverableDeviceDxe/NonDiscoverableDeviceDxe.inf
+  EmbeddedPkg/Drivers/DwMmcHcDxe/DwMmcHcDxe.inf
+  MdeModulePkg/Bus/Sd/EmmcDxe/EmmcDxe.inf
+  MdeModulePkg/Bus/Sd/SdDxe/SdDxe.inf
+
+  Platform/Hisilicon/HiKey/HiKeyDxe/HiKeyDxe.inf
 
   #
   # USB Host Support

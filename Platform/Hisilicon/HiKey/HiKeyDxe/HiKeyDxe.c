@@ -17,6 +17,7 @@
 #include <Library/DevicePathLib.h>
 #include <Library/IoLib.h>
 #include <Library/MemoryAllocationLib.h>
+#include <Library/NonDiscoverableDeviceRegistrationLib.h>
 #include <Library/PcdLib.h>
 #include <Library/UefiBootManagerLib.h>
 #include <Library/UefiBootServicesTableLib.h>
@@ -347,6 +348,31 @@ HiKeyEntryPoint (
   EFI_STATUS            Status;
 
   Status = HiKeyInitPeripherals ();
+  if (EFI_ERROR (Status)) {
+    return Status;
+  }
+
+  Status = RegisterNonDiscoverableMmioDevice (
+             NonDiscoverableDeviceTypeSdhci,
+             NonDiscoverableDeviceDmaTypeNonCoherent,
+             NULL,
+             NULL,
+             1,
+             0xF723D000, // eMMC
+             SIZE_4KB
+             );
+  if (EFI_ERROR (Status)) {
+    return Status;
+  }
+  Status = RegisterNonDiscoverableMmioDevice (
+             NonDiscoverableDeviceTypeSdhci,
+             NonDiscoverableDeviceDmaTypeNonCoherent,
+             NULL,
+             NULL,
+             1,
+             0xF723E000, // SD
+             SIZE_4KB
+             );
   if (EFI_ERROR (Status)) {
     return Status;
   }
